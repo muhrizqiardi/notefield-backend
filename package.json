@@ -13,6 +13,7 @@
     "url": "https://github.com/muhrizqiardi/notefield-backend.git"
   },
   "scripts": {
+    "start": "node index",
     "dev": "nodemon index"
   },
   "dependencies": {
