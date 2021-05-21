@@ -1,0 +1,26 @@
+{
+  "name": ".",
+  "version": "1.0.0",
+  "description": "API for the Notefield app.",
+  "author": "Muhammad Rizqi Ardiansyah <rizqi.jpg@gmail.com>",
+  "keywords": [
+    "note note-taking app react express api "
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muhrizqiardi/notefield-backend.git"
+  },
+  "scripts": {
+    "start": "./bin/app",
+    "test": "\"nodemon .\""
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "pino": "^6.11.3",
+    "pino-http": "^5.5.0",
+    "pino-pretty": "^4.8.0"
+  }
+}
