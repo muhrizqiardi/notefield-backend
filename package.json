@@ -1,5 +1,5 @@
 {
-  "name": ".",
+  "name": "notefield-backend",
   "version": "1.0.0",
   "description": "API for the Notefield app.",
   "author": "Muhammad Rizqi Ardiansyah <rizqi.jpg@gmail.com>",
@@ -13,12 +13,15 @@
     "url": "https://github.com/muhrizqiardi/notefield-backend.git"
   },
   "scripts": {
-    "start": "./bin/app",
-    "test": "\"nodemon .\""
+    "dev": "nodemon index"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "http-errors": "^1.8.0",
+    "mongoose": "^5.12.10",
+    "nodemon": "^2.0.7",
     "pino": "^6.11.3",
     "pino-http": "^5.5.0",
     "pino-pretty": "^4.8.0"
