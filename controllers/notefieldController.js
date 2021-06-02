@@ -1,8 +1,8 @@
 const Note = require('../models/Note');
 
 const getNotes = (req, res) => {
-  console.log(new Date().toLocaleTimeString() + " GET");
-  Note.find()
+  console.log(new Date().toLocaleTimeString() + " GET " + req.query.sort);
+  Note.find().sort([['updatedAt', req.query.sort == "DESC" ? 'descending' : 'ascending']])
     .then((result) => {
       res.status(200).send(result)
     })
