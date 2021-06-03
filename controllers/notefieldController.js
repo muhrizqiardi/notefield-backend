@@ -1,9 +1,12 @@
 const Note = require('../models/Note');
 
 const getNotes = (req, res) => {
-  console.log(new Date().toLocaleTimeString() + " GET " + req.query.sort);
+  console.log(new Date().toLocaleTimeString(), "GET", req.query.sort, req.query.tag);
   Note.find().sort([['updatedAt', req.query.sort == "DESC" ? 'descending' : 'ascending']])
     .then((result) => {
+      if (req.query.tag) {
+        result = result.filter(note => note.tags.includes(req.query.tag));
+      }
       res.status(200).send(result)
     })
     .catch((error) => {
@@ -27,7 +30,7 @@ const addNote = (req, res) => {
 
 const editNote = (req, res) => {
   console.log(new Date().toLocaleTimeString() + " PUT " + req.body["_id"]);
-  Note.findByIdAndUpdate(req.body["_id"], { title: req.body.title, content: req.body.content }, { "useFindAndModify": false })
+  Note.findByIdAndUpdate(req.body["_id"], { title: req.body.title, content: req.body.content , tags: req.body.tags}, { "useFindAndModify": false })
     .then((result) => {
       res.status(200).send();
     })  
